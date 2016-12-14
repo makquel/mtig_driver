@@ -20,7 +20,9 @@
 #include <sensor_msgs/FluidPressure.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/TwistWithCovariance.h>
+#include <geometry_msgs/TwistWithCovarianceStamped.h>
 #include <geometry_msgs/Vector3Stamped.h>
+#include <tf/tf.h>
 #include "mtig_driver/GpsInfo.h"
 
 #include "sensorData.h"
@@ -34,7 +36,8 @@ public:
   MessageMaker(SensorData & data);
   sensor_msgs::Imu fillImuMessage();
   sensor_msgs::NavSatFix fillNavSatFixMessage();
-  geometry_msgs::TwistWithCovariance fillVelocityMessage();
+  geometry_msgs::TwistWithCovarianceStamped fillVelocityMessage();
+  geometry_msgs::TwistWithCovarianceStamped fillGpsVelocityMessage();
   sensor_msgs::Temperature fillTemperatureMessage();
   sensor_msgs::FluidPressure fillPressureMessage();
   sensor_msgs::MagneticField fillMagneticFieldMessage();

@@ -5,6 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp 
 	std_msgs 
 	message_generation
+	tf
 )
 
 add_message_files(
@@ -21,7 +22,7 @@ generate_messages(
 catkin_package(
 			INCLUDE_DIRS include			
 			LIBRARIES ${PROJECT_NAME}
-			CATKIN_DEPENDS roscpp
+			CATKIN_DEPENDS roscpp tf
 			DEPENDS message_runtime
 )
 
@@ -39,7 +40,11 @@ catkin_package(
 #set(ROS_BUILD_TYPE RelWithDebInfo)
 
 include_directories(include ${catkin_INCLUDE_DIRS}
-  include/${PROJECT_NAME})
+  include/${PROJECT_NAME}
+  /usr/local/xsens/include
+)
+
+link_directories( /usr/local/xsens/lib )
 
 #set the default path for built executables to the "bin" directory
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

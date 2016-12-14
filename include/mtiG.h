@@ -50,7 +50,8 @@ class mtiG{
 	//Publishers
 	ros::Publisher imuPublisher;
 	ros::Publisher gpsPublisher;
-	ros::Publisher velPublisher; 
+	ros::Publisher velPublisher;
+	ros::Publisher gpsVelPublisher;
 	ros::Publisher tempPublisher;
 	ros::Publisher magFieldPub;
 	ros::Publisher pressurePublisher;

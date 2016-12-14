@@ -23,6 +23,11 @@ and is intended for use only by Xsens Technologies BV and
  * @author Lucas Casanova Nogueira, based on code from Ji Zhang and Silvio Maeta
  *          in the <a href="http://wiki.ros.org/receive_xsens">receive_xsens</a> package
  */
+
+#include "GrabCallbackClass.h"
+
+#include "conio.h" // for non ANSI _kbhit() and _getch()
+
 #include <ros/ros.h>
 #include <ros/console.h>
 #include <sensor_msgs/Imu.h>
@@ -30,14 +35,9 @@ and is intended for use only by Xsens Technologies BV and
 #include <sensor_msgs/Temperature.h>
 #include <sensor_msgs/MagneticField.h>
 #include <sensor_msgs/FluidPressure.h>
-#include <sensor_msgs/Image.h>
 #include <geometry_msgs/Twist.h>
 
-//#include "mtiG.h"
-
-#include "CallbackHandler.h"
-
-
+#include "mtiG.h"
 
 
 
